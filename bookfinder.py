@@ -3,9 +3,10 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from bs4 import BeautifulSoup
-
+import os
+os.system('clear')
 #booksRead = input("What books that you've read do you like (seperate books by commas): ")
-booksRead = "moby dick, mark twain, 451"#, minutes, hours, tomorrow"
+booksRead = "moby dick, hamlet, farrenheit 451, romeo and juliet"
 booksReadList = booksRead.split(",")
 
 linkList = []
@@ -91,5 +92,11 @@ sortedSuggestedBooks = dict(sorted(suggestedBooks.items(), key=lambda item: item
 # print(keyterms)
 # print(allSuggestedBooks)
 # print(suggestedBooks)
-print(sortedSuggestedBooks)
-print(SuggestedBookImages)
+#print(sortedSuggestedBooks)
+#print(SuggestedBookImages)
+i = 0
+for book in sortedSuggestedBooks:
+    print(book)
+    i += 1
+    if i == 20:
+        break
